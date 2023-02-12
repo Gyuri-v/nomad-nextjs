@@ -3,6 +3,9 @@ import { useRouter } from 'next/router';
 
 export default function NavBar() {
   const router = useRouter();
+  const props = {
+    color: 'orange',
+  };
   return (
     <nav>
       <Link href="/" legacyBehavior>
@@ -12,14 +15,11 @@ export default function NavBar() {
         <a className={router.pathname === '/about' ? 'active' : ''}>About</a>
       </Link>
       <style jsx>{`
-        nav {
-          background-color: tomato;
-        }
         a {
           text-decoration: none;
         }
         .active {
-          color: yellow;
+          color: ${props.color};
         }
       `}</style>
     </nav>
