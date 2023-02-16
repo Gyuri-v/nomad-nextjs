@@ -18,6 +18,9 @@ export default function Home({ results }) {
           padding: 20px;
           gap: 20px;
         }
+        .movie {
+          cursor: pointer;
+        }
         .movie img {
           max-width: 100%;
           border-radius: 12px;
@@ -37,7 +40,7 @@ export default function Home({ results }) {
 }
 
 export async function getServerSideProps() {
-  const { results } = await (await fetch(`http://localhost:3000//api/movies`)).json(); // api
+  const { results } = await (await fetch(`http://localhost:3000//api/movies`)).json(); // api/movie 경로는 프론트에서만 작동하니까 http://localhost:3000/ 붙여줌
   return {
     props: {
       results,
